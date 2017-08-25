@@ -14,6 +14,7 @@
 		9C3B460C1F4FB706002651B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C3B460A1F4FB706002651B8 /* LaunchScreen.storyboard */; };
 		9C3B46171F4FB706002651B8 /* AppleMapKitSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3B46161F4FB706002651B8 /* AppleMapKitSampleTests.swift */; };
 		9C3B46221F4FB706002651B8 /* AppleMapKitSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3B46211F4FB706002651B8 /* AppleMapKitSampleUITests.swift */; };
+		9C3B46311F4FB79B002651B8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3B46301F4FB79B002651B8 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9C3B461D1F4FB706002651B8 /* AppleMapKitSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleMapKitSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3B46211F4FB706002651B8 /* AppleMapKitSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapKitSampleUITests.swift; sourceTree = "<group>"; };
 		9C3B46231F4FB706002651B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C3B46301F4FB79B002651B8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3B46311F4FB79B002651B8 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 				9C3B46151F4FB706002651B8 /* AppleMapKitSampleTests */,
 				9C3B46201F4FB706002651B8 /* AppleMapKitSampleUITests */,
 				9C3B45FF1F4FB706002651B8 /* Products */,
+				9C3B462F1F4FB79B002651B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +127,14 @@
 				9C3B46231F4FB706002651B8 /* Info.plist */,
 			);
 			path = AppleMapKitSampleUITests;
+			sourceTree = "<group>";
+		};
+		9C3B462F1F4FB79B002651B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C3B46301F4FB79B002651B8 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JE8C2RCJ87;
 				INFOPLIST_FILE = AppleMapKitSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mxmlc.AppleMapKitSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,6 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JE8C2RCJ87;
 				INFOPLIST_FILE = AppleMapKitSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mxmlc.AppleMapKitSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
