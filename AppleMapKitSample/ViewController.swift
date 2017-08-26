@@ -11,6 +11,8 @@ import MapKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -22,6 +24,11 @@ class ViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         // trigger a one-time location request
         locationManager.requestLocation()
+        
+        // handle responses to map view
+        mapView.delegate = self
+        // enable show user location
+        mapView.showsUserLocation = true
     }
 
 }
@@ -37,7 +44,10 @@ extension ViewController: CLLocationManagerDelegate {
     // called when location information comes back
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            print("location:: \(location)")
+            // this code zoom in to user location
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegion(center: location.coordinate, span: span)
+            mapView.setRegion(region, animated: true)
         }
     }
 
@@ -46,3 +56,6 @@ extension ViewController: CLLocationManagerDelegate {
     }
 }
 
+extension ViewController: MKMapViewDelegate {
+    
+}
