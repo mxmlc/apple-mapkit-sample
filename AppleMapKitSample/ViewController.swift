@@ -9,6 +9,10 @@
 import UIKit
 import MapKit
 
+protocol HandleMapSearch {
+    func dropPinZoomIn(at placemark: MKPlacemark)
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -16,6 +20,8 @@ class ViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     var resultSearchController: UISearchController? = nil
+    
+    var selectedPin:MKPlacemark? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +56,8 @@ class ViewController: UIViewController {
         resultSearchController?.dimsBackgroundDuringPresentation = true
         // limits the overlap area to just the ViewController and not the entire NavigationController
         definesPresentationContext = true
+        
+        locationSearchTable.handleMapSearchDelegate = self
     }
 
 }
@@ -73,10 +81,31 @@ extension ViewController: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("error:: (error)")
+        print("error:: \(error)")
     }
 }
 
 extension ViewController: MKMapViewDelegate {
-    
+}
+
+extension ViewController: HandleMapSearch {
+    func dropPinZoomIn(at placemark: MKPlacemark) {
+        // cache the pin
+        selectedPin = placemark
+        // clear existing pins
+        mapView.removeAnnotations(mapView.annotations)
+        
+        // map pin that contains a coordinate, title, and subtitle
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        if let city = placemark.locality,
+            let state = placemark.administrativeArea {
+            annotation.subtitle = "\(city) \(state)"
+        }
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        mapView.setRegion(region, animated: true)
+    }
 }
