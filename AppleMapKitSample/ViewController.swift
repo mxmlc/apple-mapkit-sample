@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
+        locationSearchTable.mapView = mapView;
         
         // configure the search bar and embed it to the navigation bar
         let searchBar = resultSearchController!.searchBar
