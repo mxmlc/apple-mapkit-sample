@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     
+    var resultSearchController: UISearchController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // handle responses asynchronously
@@ -29,6 +31,24 @@ class ViewController: UIViewController {
         mapView.delegate = self
         // enable show user location
         mapView.showsUserLocation = true
+        
+        // instantiate the search view by its ID
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        
+        // configure the search bar and embed it to the navigation bar
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for places"
+        navigationItem.titleView = resultSearchController?.searchBar
+        
+        // determines that the navigation bar disappears when search results are shown
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        // show the modal semi-transparent overlay
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        // limits the overlap area to just the ViewController and not the entire NavigationController
+        definesPresentationContext = true
     }
 
 }

@@ -15,6 +15,7 @@
 		9C3B46171F4FB706002651B8 /* AppleMapKitSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3B46161F4FB706002651B8 /* AppleMapKitSampleTests.swift */; };
 		9C3B46221F4FB706002651B8 /* AppleMapKitSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3B46211F4FB706002651B8 /* AppleMapKitSampleUITests.swift */; };
 		9C3B46311F4FB79B002651B8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3B46301F4FB79B002651B8 /* MapKit.framework */; };
+		9C3B46331F50FC6F002651B8 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3B46321F50FC6F002651B8 /* LocationSearchTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		9C3B46211F4FB706002651B8 /* AppleMapKitSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapKitSampleUITests.swift; sourceTree = "<group>"; };
 		9C3B46231F4FB706002651B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C3B46301F4FB79B002651B8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9C3B46321F50FC6F002651B8 /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				9C3B46011F4FB706002651B8 /* AppDelegate.swift */,
 				9C3B46031F4FB706002651B8 /* ViewController.swift */,
+				9C3B46321F50FC6F002651B8 /* LocationSearchTable.swift */,
 				9C3B46051F4FB706002651B8 /* Main.storyboard */,
 				9C3B46081F4FB706002651B8 /* Assets.xcassets */,
 				9C3B460A1F4FB706002651B8 /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3B46331F50FC6F002651B8 /* LocationSearchTable.swift in Sources */,
 				9C3B46041F4FB706002651B8 /* ViewController.swift in Sources */,
 				9C3B46021F4FB706002651B8 /* AppDelegate.swift in Sources */,
 			);
@@ -530,6 +534,7 @@
 				9C3B46281F4FB706002651B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C3B46291F4FB706002651B8 /* Build configuration list for PBXNativeTarget "AppleMapKitSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +543,7 @@
 				9C3B462B1F4FB706002651B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C3B462C1F4FB706002651B8 /* Build configuration list for PBXNativeTarget "AppleMapKitSampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +552,7 @@
 				9C3B462E1F4FB706002651B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
